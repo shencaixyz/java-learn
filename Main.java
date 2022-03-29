@@ -17,10 +17,15 @@ public class Main {
         double d1 = 0.0 / 0; // NaN
         double d2 = 1.0 / 0; // Infinity
         double d3 = -1.0 / 0; // -Infinity
-        int d4 = -1 / 0; // -Infinity
+//        int d4 = -1 / 0; // 整数会报错
         System.out.println(d1);
         System.out.println(d2);
         System.out.println(d3);
 //        System.out.println(d4);//整数会报错
+
+        String s = "hello";
+        String t = s;
+        s = "world";
+        System.out.println(t); // t是"hello"还是"world"?
     }
 }
