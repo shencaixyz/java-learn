@@ -1,31 +1,22 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        double x = 1.0/10;
-        double y = 1- 9.0/10;
-                //观察 x 与 y 是否相等
-        System.out.println(x);
-        System.out.println(y);
-        //比较x y 是否相当 ，先计算其差值
-        double r = Math.abs(x -y);
-        if(r < 0.0001){
-            //相等
-            System.out.println("相等");
-        }else{
-            //不相等
-            System.out.println("不相等");
+        //冒泡排序
+        int[] ns = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
+        // 排序前:
+        System.out.println(Arrays.toString(ns));
+        for (int i = 0; i < ns.length - 1; i++) {
+            for (int j = 0; j < ns.length - i - 1; j++) {
+                if (ns[j] < ns[j+1]) {
+                    // 交换ns[j]和ns[j+1]:
+                    int tmp = ns[j];
+                    ns[j] = ns[j+1];
+                    ns[j+1] = tmp;
+                }
+            }
         }
-        double d1 = 0.0 / 0; // NaN
-        double d2 = 1.0 / 0; // Infinity
-        double d3 = -1.0 / 0; // -Infinity
-//        int d4 = -1 / 0; // 整数会报错
-        System.out.println(d1);
-        System.out.println(d2);
-        System.out.println(d3);
-//        System.out.println(d4);//整数会报错
-
-        String s = "hello";
-        String t = s;
-        s = "world";
-        System.out.println(t); // t是"hello"还是"world"?
+        // 排序后:
+        System.out.println(Arrays.toString(ns));
     }
 }
