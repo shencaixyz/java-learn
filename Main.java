@@ -1,22 +1,32 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
-        //冒泡排序
-        int[] ns = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
-        // 排序前:
-        System.out.println(Arrays.toString(ns));
-        for (int i = 0; i < ns.length - 1; i++) {
-            for (int j = 0; j < ns.length - i - 1; j++) {
-                if (ns[j] < ns[j+1]) {
-                    // 交换ns[j]和ns[j+1]:
-                    int tmp = ns[j];
-                    ns[j] = ns[j+1];
-                    ns[j+1] = tmp;
-                }
-            }
+        Person ming = new Person();
+        ming.setName("Xiao Ming"); // 设置name
+        ming.setAge(12); // 设置age
+        System.out.println(ming.getName() + ", " + ming.getAge());
+    }
+}
+
+class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public void setAge(int age) {
+        if (age < 0 || age > 100) {
+            throw new IllegalArgumentException("invalid age value");
         }
-        // 排序后:
-        System.out.println(Arrays.toString(ns));
+        this.age = age;
     }
 }
